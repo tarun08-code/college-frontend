@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign Activity</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <div class="max-w-7xl mx-auto p-4 sm:p-6">
+        <!-- Header -->
+        <div class="mb-6">
+            <div class="flex items-center mb-4">
+                <div class="w-1 h-6 bg-blue-500 mr-3"></div>
+                <h1 class="text-xl font-semibold text-gray-800">Assign Activity</h1>
+            </div>
+        </div>
+
+        <!-- Controls Bar -->
+        <div class="bg-white rounded-lg shadow-sm border border-gray-200 mb-4">
+            <div class="flex flex-col sm:flex-row items-center justify-between p-4 gap-4">
+                <div class="w-full sm:w-auto flex items-center">
+                    <div class="relative w-full">
+                        <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm"></i>
+                        <input 
+                            type="text" 
+                            placeholder="Search in table"
+                            class="w-full sm:w-64 pl-10 pr-4 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        >
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="hidden sm:flex items-center space-x-2 text-sm text-gray-600">
+                        <span class="cursor-pointer hover:text-blue-500">1d</span>
+                        <span class="cursor-pointer hover:text-blue-500">3d</span>
+                        <span class="cursor-pointer hover:text-blue-500">1w</span>
+                        <span class="cursor-pointer hover:text-blue-500">1m</span>
+                        <span class="text-blue-500 font-medium cursor-pointer">Custom</span>
+                        <i class="fas fa-calendar-alt text-blue-500 cursor-pointer"></i>
+                    </div>
+                    <div class="flex items-center space-x-2 cursor-pointer text-blue-500 sm:text-gray-600">
+                        <i class="fas fa-filter"></i>
+                        <span class="text-sm">Filter</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Table -->
+        <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="w-full min-w-max">
+                    <thead class="bg-gray-50 border-b border-gray-200">
+                        <tr>
+                            <th class="text-left py-3 px-4 sm:px-6 text-xs font-medium text-gray-500 uppercase tracking-wider">BATCH</th>
+                            <th class="text-left py-3 px-4 sm:px-6 text-xs font-medium text-gray-500 uppercase tracking-wider">PROGRAMME</th>
+                            <th class="text-left py-3 px-4 sm:px-6 text-xs font-medium text-gray-500 uppercase tracking-wider">SEMESTER</th>
+                            <th class="text-left py-3 px-4 sm:px-6 text-xs font-medium text-gray-500 uppercase tracking-wider">PROGRAMME MATRIX</th>
+                            <th class="text-left py-3 px-4 sm:px-6 text-xs font-medium text-gray-500 uppercase tracking-wider">ACTIONS</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <!-- Repeat this row for each item -->
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-4 px-4 sm:px-6 text-sm text-gray-900">UG 2021-24</td>
+                            <td class="py-4 px-4 sm:px-6 text-sm text-gray-900">MCA</td>
+                            <td class="py-4 px-4 sm:px-6 text-sm text-gray-900">I</td>
+                            <td class="py-4 px-4 sm:px-6 text-sm text-gray-900 truncate max-w-xs">UG 2021-24 BACHELOR OF COMPUTER APPLICATION I</td>
+                            <td class="py-4 px-4 sm:px-6">
+                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center cursor-pointer hover:bg-green-200 transition">
+                                    <i class="fas fa-eye text-green-600 text-sm"></i>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- Additional rows -->
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-4 px-4 sm:px-6 text-sm text-gray-900">UG 2021-24</td>
+                            <td class="py-4 px-4 sm:px-6 text-sm text-gray-900">MCA</td>
+                            <td class="py-4 px-4 sm:px-6 text-sm text-gray-900">II</td>
+                            <td class="py-4 px-4 sm:px-6 text-sm text-gray-900 truncate max-w-xs">UG 2021-24 BACHELOR OF COMPUTER APPLICATION I</td>
+                            <td class="py-4 px-4 sm:px-6">
+                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center cursor-pointer hover:bg-green-200 transition">
+                                    <i class="fas fa-eye text-green-600 text-sm"></i>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-4 px-4 sm:px-6 text-sm text-gray-900">UG 2021-24</td>
+                            <td class="py-4 px-4 sm:px-6 text-sm text-gray-900">MSC(Data Science)</td>
+                            <td class="py-4 px-4 sm:px-6 text-sm text-gray-900">II</td>
+                            <td class="py-4 px-4 sm:px-6 text-sm text-gray-900 truncate max-w-xs">UG 2021-24 BACHELOR OF COMPUTER APPLICATION I</td>
+                            <td class="py-4 px-4 sm:px-6">
+                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center cursor-pointer hover:bg-green-200 transition">
+                                    <i class="fas fa-eye text-green-600 text-sm"></i>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-4 px-4 sm:px-6 text-sm text-gray-900">UG 2021-24</td>
+                            <td class="py-4 px-4 sm:px-6 text-sm text-gray-900">MSC(Data Science)</td>
+                            <td class="py-4 px-4 sm:px-6 text-sm text-gray-900">II</td>
+                            <td class="py-4 px-4 sm:px-6 text-sm text-gray-900 truncate max-w-xs">UG 2021-24 BACHELOR OF COMPUTER APPLICATION I</td>
+                            <td class="py-4 px-4 sm:px-6">
+                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center cursor-pointer hover:bg-green-200 transition">
+                                    <i class="fas fa-eye text-green-600 text-sm"></i>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-4 px-4 sm:px-6 text-sm text-gray-900">UG 2021-24</td>
+                            <td class="py-4 px-4 sm:px-6 text-sm text-gray-900">MSC(Data Science)</td>
+                            <td class="py-4 px-4 sm:px-6 text-sm text-gray-900">III</td>
+                            <td class="py-4 px-4 sm:px-6 text-sm text-gray-900 truncate max-w-xs">UG 2021-24 BACHELOR OF COMPUTER APPLICATION I</td>
+                            <td class="py-4 px-4 sm:px-6">
+                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center cursor-pointer hover:bg-green-200 transition">
+                                    <i class="fas fa-eye text-green-600 text-sm"></i>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="flex flex-col sm:flex-row items-center justify-between mt-4 gap-4">
+            <div class="flex items-center">
+                <button class="flex items-center px-4 py-2 text-sm text-gray-600 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition">
+                    <i class="fas fa-chevron-left mr-2"></i>
+                    Previous
+                </button>
+            </div>
+            <div class="flex items-center space-x-2">
+                <button class="px-3 py-2 text-sm bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition">1</button>
+                <button class="px-3 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded-lg transition">2</button>
+                <button class="px-3 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded-lg transition">3</button>
+                <span class="px-3 py-2 text-sm text-gray-400 hidden sm:inline">...</span>
+                <button class="px-3 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded-lg hidden sm:inline transition">8</button>
+                <button class="px-3 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded-lg hidden sm:inline transition">9</button>
+                <button class="px-3 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded-lg hidden sm:inline transition">10</button>
+            </div>
+            <div class="flex items-center">
+                <button class="flex items-center px-4 py-2 text-sm text-gray-600 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition">
+                    Next
+                    <i class="fas fa-chevron-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-8 text-center text-sm text-gray-500">
+            © Developed by : Software Development Centre, Kristu Jayanti College (Autonomous), Bangalore
+        </div>
+    </div>
+</body>
+</html>
