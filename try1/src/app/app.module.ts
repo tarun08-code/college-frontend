@@ -9,6 +9,7 @@ import { NewCourseTypeModalComponent } from './programme-matrix/new-course-type-
 import { GrpingPopUpComponent } from './programme-matrix/grping-pop-up/grping-pop-up.component';
 import { UngroupngModalComponent } from './programme-matrix/ungroupng-modal/ungroupng-modal.component';
 import { DeletePopupComponent } from './programme-matrix/delete-popup/delete-popup.component';
+import { DineshComponent } from './programme-matrix/dinesh/dinesh.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { DeletePopupComponent } from './programme-matrix/delete-popup/delete-pop
     GrpingPopUpComponent,
     UngroupngModalComponent,
     DeletePopupComponent,
+    DineshComponent,
   ],
   imports: [
     BrowserModule,

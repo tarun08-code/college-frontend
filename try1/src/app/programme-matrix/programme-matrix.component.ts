@@ -234,4 +234,12 @@ export class ProgrammeMatrixComponent {
     console.log(`Add course type clicked for row ${index}`);
     // Add course type addition functionality here
   }
+
+  /**
+   * Handle add batch button click
+   */
+  onAddBatch(): void {
+    console.log('Add batch button clicked');
+    // Add batch addition functionality here
+  }
 }
