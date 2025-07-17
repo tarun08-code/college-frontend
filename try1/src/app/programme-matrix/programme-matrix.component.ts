@@ -216,4 +216,22 @@ export class ProgrammeMatrixComponent {
   getTotalCredits(): number {
     return this.courses.reduce((total, course) => total + course.credits, 0);
   }
+
+  /**
+   * Handle course type dropdown click
+   * @param index The index of the course row
+   */
+  onCourseTypeDropdown(index: number): void {
+    console.log(`Course type dropdown clicked for row ${index}`);
+    // Add dropdown functionality here
+  }
+
+  /**
+   * Handle add course type button click
+   * @param index The index of the course row
+   */
+  onAddCourseType(index: number): void {
+    console.log(`Add course type clicked for row ${index}`);
+    // Add course type addition functionality here
+  }
 }
