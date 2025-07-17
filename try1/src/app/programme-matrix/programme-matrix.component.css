@@ -1,0 +1,171 @@
+/* Programme Matrix Component Styles */
+
+.programme-matrix-container {
+  margin-left: 192px;
+  /* Match sidebar width */
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 192px;
+  /* w-48 = 192px */
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+/* Custom styles for dropdown transitions */
+.dropdown-content {
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.dropdown-content.hidden {
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+}
+
+.dropdown-content:not(.hidden) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom scrollbar for sidebar */
+.sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 2px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Group and Ungroup button styles */
+.group-btn,
+.ungroup-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.group-btn:hover,
+.ungroup-btn:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+.group-btn:active,
+.ungroup-btn:active {
+  transform: scale(0.95);
+}
+
+/* Ensure SVG icons are properly sized */
+.group-btn img,
+.ungroup-btn img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Save and Cancel button styles */
+.save-btn,
+.cancel-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.save-btn {
+  background: #3B82F6;
+  /* Blue background for save */
+}
+
+.cancel-btn {
+  background: #EF4444;
+  /* Red background for cancel */
+}
+
+.save-btn:hover {
+  background: #2563EB;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.cancel-btn:hover {
+  background: #DC2626;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+.save-btn:active,
+.cancel-btn:active {
+  transform: scale(0.95);
+}
+
+/* Ensure SVG icons in save/cancel buttons are properly sized */
+.save-btn img,
+.cancel-btn img {
+  display: block;
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) invert(1);
+  /* Make icons white */
+}
+
+/* Table responsiveness */
+.table-container {
+  overflow-x: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .programme-matrix-container {
+    margin-left: 0;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .sidebar.mobile-open {
+    transform: translateX(0);
+  }
+}
+
+/* Animation for menu items */
+.sidebar a {
+  transition: color 0.2s ease-in-out;
+}
+
+/* Focus styles for accessibility */
+button:focus,
+select:focus,
+input[type="checkbox"]:focus {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
