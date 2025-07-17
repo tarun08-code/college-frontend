@@ -208,4 +208,12 @@ export class ProgrammeMatrixComponent {
       console.log('Cannot delete the last row');
     }
   }
+
+  /**
+   * Calculate the total credits from all courses
+   * @returns The sum of all course credits
+   */
+  getTotalCredits(): number {
+    return this.courses.reduce((total, course) => total + course.credits, 0);
+  }
 }

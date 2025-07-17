@@ -212,113 +212,67 @@
               </tr>
             </thead>
             <tbody>
-              <tr class="border-b border-slate-200 hover:bg-gray-50">
+              <tr class="border-b border-slate-200 hover:bg-gray-50" *ngFor="let course of courses; let i = index">
                 <td class="p-3">
                   <input type="checkbox" class="rounded border-zinc-300">
                 </td>
-                <td class="p-3 text-sm text-gray-600 text-center">1</td>
-                <td class="p-3 text-sm text-gray-600 text-center">DSC</td>
+                <td class="p-3 text-sm text-gray-600 text-center">{{ course.semester }}</td>
+                <td class="p-3 text-sm text-gray-600 text-center">{{ course.courseType }}</td>
                 <td class="p-3 text-sm text-gray-600">
                   <div class="flex">
-                    <span class="flex-1 text-left">24CS01</span>
-                    <span class="flex-1 text-right">24BCA2T441</span>
+                    <span class="flex-1 text-left">{{ course.programmeCode }}</span>
+                    <span class="flex-1 text-right">{{ course.courseCode }}</span>
                   </div>
                 </td>
-                <td class="p-3 text-sm text-gray-600">Software Engineering</td>
-                <td class="p-3 text-sm text-gray-600 text-center">60</td>
-                <td class="p-3 text-sm text-gray-600 text-center">4</td>
+                <td class="p-3 text-sm text-gray-600">{{ course.courseTitle }}</td>
+                <td class="p-3 text-sm text-gray-600 text-center">{{ course.totalHours }}</td>
+                <td class="p-3 text-sm text-gray-600 text-center">{{ course.hoursPerWeek }}</td>
                 <td class="p-3 bg-lime-50">
                   <div class="flex">
-                    <span class="flex-1 text-center text-sm text-gray-600">5</span>
-                    <span class="flex-1 text-center text-sm text-gray-600">5</span>
-                    <span class="flex-1 text-center text-sm text-gray-600">5</span>
+                    <span class="flex-1 text-center text-sm text-gray-600">{{ course.hoursDistribution.l }}</span>
+                    <span class="flex-1 text-center text-sm text-gray-600">{{ course.hoursDistribution.t }}</span>
+                    <span class="flex-1 text-center text-sm text-gray-600">{{ course.hoursDistribution.p }}</span>
                   </div>
                 </td>
                 <td class="p-3 bg-orange-100">
                   <div class="flex">
-                    <span class="flex-1 text-center text-sm text-gray-600">5</span>
-                    <span class="flex-1 text-center text-sm text-gray-600">5</span>
-                    <span class="flex-1 text-center text-sm text-gray-600">-</span>
+                    <span class="flex-1 text-center text-sm text-gray-600">{{ course.creditDistribution.l }}</span>
+                    <span class="flex-1 text-center text-sm text-gray-600">{{ course.creditDistribution.t }}</span>
+                    <span class="flex-1 text-center text-sm text-gray-600">{{ course.creditDistribution.p }}</span>
                   </div>
                 </td>
-                <td class="p-3 text-sm text-gray-600 text-center">4</td>
-                <td class="p-3 text-sm text-gray-600 text-center">24BCA2T441*</td>
+                <td class="p-3 text-sm text-gray-600 text-center">{{ course.credits }}</td>
+                <td class="p-3 text-sm text-gray-600 text-center">{{ course.preRequisite }}</td>
                 <td class="p-3 bg-rose-50">
                   <div class="flex">
-                    <span class="flex-1 text-center text-sm text-gray-600">5</span>
-                    <span class="flex-1 text-center text-sm text-gray-600">5</span>
-                    <span class="flex-1 text-center text-sm text-gray-600">10</span>
+                    <span class="flex-1 text-center text-sm text-gray-600">{{ course.maxMarks.fa }}</span>
+                    <span class="flex-1 text-center text-sm text-gray-600">{{ course.maxMarks.sa }}</span>
+                    <span class="flex-1 text-center text-sm text-gray-600">{{ course.maxMarks.total }}</span>
                   </div>
                 </td>
                 <td class="p-3 text-sm text-gray-600 text-center">
-                  <select class="w-full text-xs border rounded px-1">
-                    <option>not selected</option>
+                  <select class="w-full text-xs border rounded px-1" [(ngModel)]="course.template">
+                    <option value="not selected">not selected</option>
+                    <option value="template1">Template 1</option>
+                    <option value="template2">Template 2</option>
                   </select>
                 </td>
                 <td class="p-3 text-center">
-                  <button class="delete-row-btn" (click)="onDeleteRow(0)" title="Delete row">
-                    <img src="assets/Frame.svg" alt="Delete" class="w-4 h-4">
-                  </button>
-                </td>
-              </tr>
-              <tr class="border-b border-slate-200 hover:bg-gray-50">
-                <td class="p-3">
-                  <input type="checkbox" class="rounded border-zinc-300">
-                </td>
-                <td class="p-3 text-sm text-gray-600 text-center">1</td>
-                <td class="p-3 text-sm text-gray-600 text-center">DSC</td>
-                <td class="p-3 text-sm text-gray-600">
-                  <div class="flex">
-                    <span class="flex-1 text-left">24CS01</span>
-                    <span class="flex-1 text-right">24BCA2T442</span>
-                  </div>
-                </td>
-                <td class="p-3 text-sm text-gray-600">Software Engineering</td>
-                <td class="p-3 text-sm text-gray-600 text-center">60</td>
-                <td class="p-3 text-sm text-gray-600 text-center">4</td>
-                <td class="p-3 bg-lime-50">
-                  <div class="flex">
-                    <span class="flex-1 text-center text-sm text-gray-600">5</span>
-                    <span class="flex-1 text-center text-sm text-gray-600">5</span>
-                    <span class="flex-1 text-center text-sm text-gray-600">5</span>
-                  </div>
-                </td>
-                <td class="p-3 bg-orange-100">
-                  <div class="flex">
-                    <span class="flex-1 text-center text-sm text-gray-600">5</span>
-                    <span class="flex-1 text-center text-sm text-gray-600">5</span>
-                    <span class="flex-1 text-center text-sm text-gray-600">5</span>
-                  </div>
-                </td>
-                <td class="p-3 text-sm text-gray-600 text-center">4</td>
-                <td class="p-3 text-sm text-gray-600 text-center">PUC*</td>
-                <td class="p-3 bg-rose-50">
-                  <div class="flex">
-                    <span class="flex-1 text-center text-sm text-gray-600">5</span>
-                    <span class="flex-1 text-center text-sm text-gray-600">5</span>
-                    <span class="flex-1 text-center text-sm text-gray-600">10</span>
-                  </div>
-                </td>
-                <td class="p-3 text-sm text-gray-600 text-center">
-                  <select class="w-full text-xs border rounded px-1">
-                    <option>not selected</option>
-                  </select>
-                </td>
-                <td class="p-3 text-center">
-                  <button class="delete-row-btn" (click)="onDeleteRow(1)" title="Delete row">
+                  <button class="delete-row-btn" (click)="onDeleteRow(i)" title="Delete row">
                     <img src="assets/Frame.svg" alt="Delete" class="w-4 h-4">
                   </button>
                 </td>
               </tr>
               <tr class="bg-sky-100">
-                <td colspan="14" class="p-3 text-center text-sm text-gray-600 font-semibold">Total: 8</td>
+                <td colspan="14" class="p-3 text-center text-sm text-gray-600 font-semibold">Total: {{ getTotalCredits()
+                  }}</td>
               </tr>
             </tbody>
           </table>
         </div>
 
         <!-- Add Row Button -->
-        <div class="mt-4 flex justify-center">
+        <div class="mt-4 flex justify-end">
           <button
             class="add-row-btn flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 rounded-md text-sm font-medium text-blue-600 hover:bg-blue-50 transition-colors"
             (click)="onAddRow()">
