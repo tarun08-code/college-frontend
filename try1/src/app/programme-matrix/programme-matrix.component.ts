@@ -10,6 +10,9 @@ export class ProgrammeMatrixComponent {
   isDropdownOpen = false;
   selectedSemester: string | null = null;
 
+  // Search functionality
+  searchQuery = '';
+
   // Available semester options
   semesters = [
     { value: '1', label: 'Semester 1' },
@@ -127,6 +130,38 @@ export class ProgrammeMatrixComponent {
   }
 
   /**
+   * Handle search input
+   */
+  onSearchInput(event: Event): void {
+    const target = event.target as HTMLInputElement;
+    this.searchQuery = target.value;
+    console.log('Search query:', this.searchQuery);
+
+    // Add search functionality here
+    // You can filter courses, navigate to search results, etc.
+    this.performSearch(this.searchQuery);
+  }
+
+  /**
+   * Perform search operation
+   */
+  private performSearch(query: string): void {
+    if (!query.trim()) {
+      return;
+    }
+
+    // Example search implementation
+    const searchResults = this.courses.filter(course =>
+      course.courseTitle.toLowerCase().includes(query.toLowerCase()) ||
+      course.courseCode.toLowerCase().includes(query.toLowerCase()) ||
+      course.programmeCode.toLowerCase().includes(query.toLowerCase())
+    );
+
+    console.log('Search results:', searchResults);
+    // You can emit events, navigate, or update component state based on search results
+  }
+
+  /**
    * Filter courses by selected semester (optional implementation)
    */
   private filterCoursesBySemester(semester: string): void {
@@ -135,5 +170,42 @@ export class ProgrammeMatrixComponent {
       course.semester === parseInt(semester)
     );
     console.log('Filtered courses:', filteredCourses);
+  }
+
+  /**
+   * Add a new row to the course table
+   */
+  onAddRow(): void {
+    const newCourse = {
+      semester: 1,
+      courseType: 'DSC',
+      programmeCode: '',
+      courseCode: '',
+      courseTitle: '',
+      totalHours: 0,
+      hoursPerWeek: 0,
+      hoursDistribution: { l: 0, t: 0, p: 0 },
+      creditDistribution: { l: 0, t: 0, p: 0 },
+      credits: 0,
+      preRequisite: '',
+      maxMarks: { fa: 0, sa: 0, total: 0 },
+      template: 'not selected'
+    };
+
+    this.courses.push(newCourse);
+    console.log('New row added:', newCourse);
+  }
+
+  /**
+   * Delete a row from the course table
+   * @param index The index of the row to delete
+   */
+  onDeleteRow(index: number): void {
+    if (this.courses.length > 1) { // Prevent deleting the last row
+      this.courses.splice(index, 1);
+      console.log(`Row ${index} deleted`);
+    } else {
+      console.log('Cannot delete the last row');
+    }
   }
 }
